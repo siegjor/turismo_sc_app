@@ -1,15 +1,19 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:turismo_sc_app/models/attraction_model.dart';
 
-class TouristAttractionScreen extends StatelessWidget {
-  const TouristAttractionScreen({Key? key}) : super(key: key);
+class AttractionScreen extends StatelessWidget {
+  const AttractionScreen({required this.attraction, Key? key})
+      : super(key: key);
+
+  final AttractionModel attraction;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Nome da atração'),
+        title: Text(attraction.name),
         leading: IconButton(
           onPressed: () => Navigator.pop(context),
           icon: const Icon(
@@ -19,7 +23,7 @@ class TouristAttractionScreen extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
-          Image.asset('assets/images/serra_rio_rastro.jpg'),
+          Image.asset(attraction.imagePath),
           Container(
             padding: const EdgeInsets.all(10),
             height: 300,
@@ -29,42 +33,42 @@ class TouristAttractionScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Text(
-                  'Nome do local',
-                  style: TextStyle(
+                  attraction.name,
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 32,
                   ),
                 ),
                 Text(
-                  'Endereço: lorem ipsum dolor sit amet',
+                  'Endereço: ${attraction.address}',
                   style: TextStyle(
                     fontSize: 16,
                     color: Colors.grey[700],
                   ),
                 ),
                 Text(
-                  'Telefone: lorem ipsum dolor sit amet',
+                  'Telefone: ${attraction.phoneNumber}',
                   style: TextStyle(
                     fontSize: 16,
                     color: Colors.grey[700],
                   ),
                 ),
                 Text(
-                  'Horário de funcionamento: lorem ipsum dolor sit amet',
+                  'Horário de funcionamento: ${attraction.openingHours}',
                   style: TextStyle(
                     fontSize: 16,
                     color: Colors.grey[700],
                   ),
                 ),
                 Text(
-                  'Website: lorem ipsum dolor sit amet',
+                  'Website: ${attraction.websiteUrl}',
                   style: TextStyle(
                     fontSize: 16,
                     color: Colors.grey[700],
                   ),
                 ),
                 Text(
-                  'Preço do ingresso: lorem ipsum dolor sit amet',
+                  'Preço do ingresso: ${attraction.ticketPrice}',
                   style: TextStyle(
                     fontSize: 16,
                     color: Colors.grey[700],
@@ -74,7 +78,7 @@ class TouristAttractionScreen extends StatelessWidget {
             ),
           ),
           Container(
-            margin: EdgeInsets.all(10),
+            margin: const EdgeInsets.all(10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [

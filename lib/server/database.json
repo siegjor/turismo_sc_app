@@ -1,0 +1,69 @@
+{
+    "attractions": [
+        {
+            "id": 1,
+            "name": "Beto Carrero",
+            "imagePath": "assets/images/beto_carrero.jpg",
+            "address": "Rua Timóteo Perfeito Flores, 2060 - Armação, 88385-000 - Penha - SC",
+            "city": "Penha",
+            "phoneNumber": "(47) 3398-0367",
+            "openingHours": "08h - 19h",
+            "ticketPrice": "170.00",
+            "websiteUrl": "https://www.betocarrero.com.br/",
+            "videoUrl": "https://www.youtube.com/watch?v=Ie0qAfexQsA",
+            "mapsUrl": "https://goo.gl/maps/AbqagZniNufc86gp7"
+        },
+        {
+            "id": 2,
+            "name": "Zoo Pomerode",
+            "imagePath": "assets/images/zoo_pomerode.webp",
+            "address": "Rua Hermann Weege, 180 - Centro, Pomerode - SC, 89107-000",
+            "city": "Pomerode",
+            "phoneNumber": "(47) 3387-2659",
+            "openingHours": "08h - 18h",
+            "ticketPrice": "33.00",
+            "websiteUrl": "https://www.zoopomerode.com.br/index.html",
+            "videoUrl": "https://www.youtube.com/watch?v=xRasIbcMcUA",
+            "mapsUrl": "https://g.page/ZooPomerode?share"
+        },
+        {
+            "id": 3,
+            "name": "Serra do Rio do Rastro",
+            "imagePath": "assets/images/serra_rio_rastro.jpg",
+            "address": "Guatá, Lauro Müller - SC, 88880-000",
+            "city": "Lauro Müller",
+            "phoneNumber": "Não há",
+            "openingHours": "Não há",
+            "ticketPrice": "Gratuito",
+            "websiteUrl": "https://www.zoopomerode.com.br/index.html",
+            "videoUrl": "https://www.youtube.com/watch?v=jkZixsKvOx4",
+            "mapsUrl": "https://goo.gl/maps/B35baiC9eeG5F9C58"
+        },
+        {
+            "id": 4,
+            "name": "Farol de Santa Marta",
+            "imagePath": "assets/images/farol_santa_marta.jpg",
+            "address": "Estrada Geral do Farol de Santa Marta, Estr. Geral da Me. - Cigana, Laguna - SC, 88790-000",
+            "city": "Laguna",
+            "phoneNumber": "Não há",
+            "openingHours": "Não há",
+            "ticketPrice": "Gratuito",
+            "websiteUrl": "",
+            "videoUrl": "https://www.youtube.com/watch?v=GDAE83ytyCM",
+            "mapsUrl": "https://goo.gl/maps/m12EC3CzxdxJKrWt6"
+        },
+        {
+            "id": 5,
+            "name": "Mirante Eco 360º",
+            "imagePath": "assets/images/mirante_eco.jpg",
+            "address": "Av. Tatuíra, 1500 - Canto Grande, Bombinhas - SC, 88215-000",
+            "city": "Bombinhas",
+            "phoneNumber": "(47) 99915-1554",
+            "openingHours": "10h - 17h30",
+            "ticketPrice": "10.00",
+            "websiteUrl": "https://turismo.bombinhas.sc.gov.br/o-que-fazer/item/mirante-eco-360",
+            "videoUrl": "https://www.youtube.com/watch?v=JbOdrsgJiBc",
+            "mapsUrl": "https://goo.gl/maps/KAAAAApg3gHpuYYV9"
+        }
+    ]
+}

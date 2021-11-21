@@ -30,22 +30,25 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             Expanded(
-              child: Consumer<HomeProvider>(
-                  builder: (context, homeProvider, child) {
-                final List attractionList = homeProvider.allAttractionsList;
-                return ListView.builder(
-                  shrinkWrap: true,
-                  itemCount: attractionList.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    final attraction = attractionList[index];
+              child: FutureBuilder(
+                  future: Provider.of<HomeProvider>(context, listen: false)
+                      .getAttractions(),
+                  builder: (context, AsyncSnapshot snapshot) {
+                    return ListView.builder(
+                        shrinkWrap: true,
+                        itemCount: snapshot.data.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          final attraction = snapshot.data[index];
 
-                    return AttractionTile(
-                      attraction: attraction,
-                      provider: homeProvider,
-                    );
-                  },
-                );
-              }),
+                          return Consumer<HomeProvider>(
+                              builder: (context, homeProvider, child) {
+                            return AttractionTile(
+                              attraction: attraction,
+                              provider: homeProvider,
+                            );
+                          });
+                        });
+                  }),
             ),
           ],
         ),
