@@ -16,9 +16,9 @@ class HomeProvider extends ChangeNotifier {
   Future<List> getAttractions() async {
     List attractionsResponse;
     SharedPreferences pref = await SharedPreferences.getInstance();
-    pref.clear();
+    //pref.clear();
     if (pref.containsKey('allAttractions')) {
-      attractionsResponse = await loadAllAttractionsFromDisk(pref);
+      attractionsResponse = await _loadAllAttractionsFromDisk(pref);
       print('Recuperou os dados do disco!');
     } else {
       print('Pegou os dados da API!');
@@ -30,7 +30,7 @@ class HomeProvider extends ChangeNotifier {
     return attractionsResponse;
   }
 
-  Future<List> loadAllAttractionsFromDisk(SharedPreferences pref) async {
+  Future<List> _loadAllAttractionsFromDisk(SharedPreferences pref) async {
     SharedPreferences pref = await SharedPreferences.getInstance();
     final List<dynamic> jsonList =
         jsonDecode(pref.getString('allAttractions')!) as List;
@@ -73,15 +73,12 @@ class HomeProvider extends ChangeNotifier {
 
   void addFavorite(AttractionModel touristAttraction) {
     _favAttractionList.add(touristAttraction.id);
-    print('adicionou: $_favAttractionList');
     notifyListeners();
     _saveAllAttractions();
   }
 
   void removeFavorite(AttractionModel touristAttraction) {
     _favAttractionList.remove(touristAttraction.id);
-    print('removeu: $_favAttractionList');
-
     notifyListeners();
     _saveAllAttractions();
   }
