@@ -61,6 +61,8 @@ class HomeScreen extends StatelessWidget {
                             return AttractionTile(
                               attraction: attraction,
                               provider: homeProvider,
+                              isFavorite: homeProvider.favAttractionList
+                                  .contains(attraction.id),
                             );
                           });
                         });

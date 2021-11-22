@@ -11,7 +11,6 @@ class AttractionModel {
     required this.websiteUrl,
     required this.videoUrl,
     required this.mapsUrl,
-    this.isFavorite,
   });
 
   final int id;
@@ -25,7 +24,6 @@ class AttractionModel {
   final String websiteUrl;
   final String videoUrl;
   final String mapsUrl;
-  bool? isFavorite = false;
 
   factory AttractionModel.fromJson(Map<String, dynamic> json) {
     return AttractionModel(
@@ -40,7 +38,6 @@ class AttractionModel {
       websiteUrl: json['websiteUrl'] ?? json['websiteUrl'],
       videoUrl: json['videoUrl'] ?? json['videoUrl'],
       mapsUrl: json['mapsUrl'] ?? json['mapsUrl'],
-      isFavorite: json['isFavorite'] ?? false,
     );
   }
 
@@ -57,7 +54,6 @@ class AttractionModel {
     _data['websiteUrl'] = websiteUrl;
     _data['videoUrl'] = videoUrl;
     _data['mapsUrl'] = mapsUrl;
-    _data['isFavorite'] = isFavorite;
     return _data;
   }
 }

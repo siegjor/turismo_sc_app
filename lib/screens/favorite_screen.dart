@@ -51,7 +51,7 @@ class FavoriteScreen extends StatelessWidget {
                           return AttractionTile(
                             attraction: attraction,
                             provider: homeProvider,
-                            hasFavoriteIcon: false,
+                            isOnHomeScreen: false,
                           );
                         },
                       );

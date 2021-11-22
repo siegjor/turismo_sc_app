@@ -8,10 +8,10 @@
             "city": "Penha",
             "phoneNumber": "(47) 3398-0367",
             "openingHours": "08h - 19h",
-            "ticketPrice": "170.00",
-            "websiteUrl": "https://www.betocarrero.com.br/",
-            "videoUrl": "https://www.youtube.com/watch?v=Ie0qAfexQsA",
-            "mapsUrl": "https://goo.gl/maps/AbqagZniNufc86gp7"
+            "ticketPrice": "R$95.00 - R$190.00",
+            "websiteUrl": "www.betocarrero.com.br",
+            "videoUrl": "www.youtube.com/watch?v=Ie0qAfexQsA",
+            "mapsUrl": "goo.gl/maps/AbqagZniNufc86gp7"
         },
         {
             "id": 2,
@@ -21,10 +21,10 @@
             "city": "Pomerode",
             "phoneNumber": "(47) 3387-2659",
             "openingHours": "08h - 18h",
-            "ticketPrice": "33.00",
-            "websiteUrl": "https://www.zoopomerode.com.br/index.html",
-            "videoUrl": "https://www.youtube.com/watch?v=xRasIbcMcUA",
-            "mapsUrl": "https://g.page/ZooPomerode?share"
+            "ticketPrice": "R$20.00 - R$40.00",
+            "websiteUrl": "www.zoopomerode.com.br",
+            "videoUrl": "www.youtube.com/watch?v=xRasIbcMcUA",
+            "mapsUrl": "goo.gl/maps/7Q9QRL8jSGRTMi6R6"
         },
         {
             "id": 3,
@@ -36,8 +36,8 @@
             "openingHours": "Não há",
             "ticketPrice": "Gratuito",
             "websiteUrl": "Não há",
-            "videoUrl": "https://www.youtube.com/watch?v=jkZixsKvOx4",
-            "mapsUrl": "https://goo.gl/maps/B35baiC9eeG5F9C58"
+            "videoUrl": "www.youtube.com/watch?v=jkZixsKvOx4",
+            "mapsUrl": "goo.gl/maps/B35baiC9eeG5F9C58"
         },
         {
             "id": 4,
@@ -49,8 +49,8 @@
             "openingHours": "Não há",
             "ticketPrice": "Gratuito",
             "websiteUrl": "Não há",
-            "videoUrl": "https://www.youtube.com/watch?v=GDAE83ytyCM",
-            "mapsUrl": "https://goo.gl/maps/m12EC3CzxdxJKrWt6"
+            "videoUrl": "www.youtube.com/watch?v=GDAE83ytyCM",
+            "mapsUrl": "goo.gl/maps/m12EC3CzxdxJKrWt6"
         },
         {
             "id": 5,
@@ -60,10 +60,10 @@
             "city": "Bombinhas",
             "phoneNumber": "(47) 99915-1554",
             "openingHours": "10h - 17h30",
-            "ticketPrice": "10.00",
-            "websiteUrl": "https://turismo.bombinhas.sc.gov.br/o-que-fazer/item/mirante-eco-360",
-            "videoUrl": "https://www.youtube.com/watch?v=JbOdrsgJiBc",
-            "mapsUrl": "https://goo.gl/maps/KAAAAApg3gHpuYYV9"
+            "ticketPrice": "R$10.00",
+            "websiteUrl": "turismo.bombinhas.sc.gov.br/o-que-fazer/item/mirante-eco-360",
+            "videoUrl": "www.youtube.com/watch?v=JbOdrsgJiBc",
+            "mapsUrl": "goo.gl/maps/KAAAAApg3gHpuYYV9"
         }
     ]
 }

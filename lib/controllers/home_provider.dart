@@ -16,14 +16,14 @@ class HomeProvider extends ChangeNotifier {
   Future<List> getAttractions() async {
     List attractionsResponse;
     SharedPreferences pref = await SharedPreferences.getInstance();
-    await pref.clear();
+    pref.clear();
     if (pref.containsKey('allAttractions')) {
       attractionsResponse = await loadAllAttractionsFromDisk(pref);
       print('Recuperou os dados do disco!');
     } else {
+      print('Pegou os dados da API!');
       _allAttractionsList = await repository.fetchAttractions();
       attractionsResponse = _allAttractionsList;
-      print('Pegou os dados da API!');
       _saveAllAttractions();
     }
 
@@ -72,16 +72,16 @@ class HomeProvider extends ChangeNotifier {
   }
 
   void addFavorite(AttractionModel touristAttraction) {
-    touristAttraction.isFavorite = true;
-
     _favAttractionList.add(touristAttraction.id);
+    print('adicionou: $_favAttractionList');
     notifyListeners();
     _saveAllAttractions();
   }
 
   void removeFavorite(AttractionModel touristAttraction) {
-    touristAttraction.isFavorite = false;
     _favAttractionList.remove(touristAttraction.id);
+    print('removeu: $_favAttractionList');
+
     notifyListeners();
     _saveAllAttractions();
   }

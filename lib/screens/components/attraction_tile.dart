@@ -7,12 +7,14 @@ import '../attraction_screen.dart';
 class AttractionTile extends StatelessWidget {
   final AttractionModel attraction;
   final HomeProvider? provider;
-  final bool hasFavoriteIcon;
+  final bool isOnHomeScreen;
+  final bool isFavorite;
 
   const AttractionTile(
       {required this.attraction,
       this.provider,
-      this.hasFavoriteIcon = true,
+      this.isOnHomeScreen = true,
+      this.isFavorite = false,
       Key? key})
       : super(key: key);
 
@@ -28,19 +30,30 @@ class AttractionTile extends StatelessWidget {
         );
       },
       child: Card(
+        clipBehavior: Clip.antiAlias,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
         margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
         child: Column(
           children: [
-            Image.asset(attraction.imagePath),
+            Image.asset(
+              attraction.imagePath,
+              height: 250,
+              width: 400,
+              fit: BoxFit.fill,
+            ),
             ListTile(
               title: Text(attraction.name),
               subtitle: Text(attraction.city),
-              trailing: hasFavoriteIcon
+              trailing: isOnHomeScreen
                   ? IconButton(
-                      icon: attraction.isFavorite!
+                      splashColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      icon: isFavorite
                           ? const Icon(Icons.favorite, color: Colors.red)
                           : const Icon(Icons.favorite_border),
-                      onPressed: attraction.isFavorite!
+                      onPressed: isFavorite
                           ? () => provider!.removeFavorite(attraction)
                           : () => provider!.addFavorite(attraction),
                     )
