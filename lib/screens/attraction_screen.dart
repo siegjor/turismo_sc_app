@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:turismo_sc_app/models/attraction_model.dart';
 

@@ -23,8 +23,12 @@ class FavoriteScreen extends StatelessWidget {
             Expanded(
               child: Consumer<HomeProvider>(
                   builder: (context, homeProvider, child) {
-                final List attractionList = homeProvider.favAttractionList;
-                return attractionList.isEmpty
+                List favoriteAttractions = homeProvider.allAttractionsList
+                    .where((element) =>
+                        homeProvider.favAttractionList.contains(element.id))
+                    .toList();
+
+                return favoriteAttractions.isEmpty
                     ? Center(
                         child: Container(
                           margin: const EdgeInsets.all(30),
@@ -40,9 +44,9 @@ class FavoriteScreen extends StatelessWidget {
                       )
                     : ListView.builder(
                         shrinkWrap: true,
-                        itemCount: attractionList.length,
+                        itemCount: favoriteAttractions.length,
                         itemBuilder: (BuildContext context, int index) {
-                          final attraction = attractionList[index];
+                          final attraction = favoriteAttractions[index];
 
                           return AttractionTile(
                             attraction: attraction,

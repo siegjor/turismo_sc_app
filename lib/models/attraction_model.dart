@@ -11,32 +11,53 @@ class AttractionModel {
     required this.websiteUrl,
     required this.videoUrl,
     required this.mapsUrl,
+    this.isFavorite,
   });
 
-  late final int id;
-  late final String name;
-  late final String imagePath;
-  late final String address;
-  late final String city;
-  late final String phoneNumber;
-  late final String openingHours;
-  late final String ticketPrice;
-  late final String websiteUrl;
-  late final String videoUrl;
-  late final String mapsUrl;
-  bool isFavorite = false;
+  final int id;
+  final String name;
+  final String imagePath;
+  final String address;
+  final String city;
+  final String phoneNumber;
+  final String openingHours;
+  final String ticketPrice;
+  final String websiteUrl;
+  final String videoUrl;
+  final String mapsUrl;
+  bool? isFavorite = false;
 
-  AttractionModel.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
-    name = json['name'];
-    imagePath = json['imagePath'];
-    address = json['address'];
-    city = json['city'];
-    phoneNumber = json['phoneNumber'];
-    openingHours = json['openingHours'];
-    ticketPrice = json['ticketPrice'];
-    websiteUrl = json['websiteUrl'];
-    videoUrl = json['videoUrl'];
-    mapsUrl = json['mapsUrl'];
+  factory AttractionModel.fromJson(Map<String, dynamic> json) {
+    return AttractionModel(
+      id: json['id'] ?? json['id'],
+      name: json['name'] ?? json['name'],
+      imagePath: json['imagePath'] ?? json['imagePath'],
+      address: json['address'] ?? json['address'],
+      city: json['city'] ?? json['city'],
+      phoneNumber: json['phoneNumber'] ?? json['phoneNumber'],
+      openingHours: json['openingHours'] ?? json['openingHours'],
+      ticketPrice: json['ticketPrice'] ?? json['ticketPrice'],
+      websiteUrl: json['websiteUrl'] ?? json['websiteUrl'],
+      videoUrl: json['videoUrl'] ?? json['videoUrl'],
+      mapsUrl: json['mapsUrl'] ?? json['mapsUrl'],
+      isFavorite: json['isFavorite'] ?? false,
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> _data = <String, dynamic>{};
+    _data['id'] = id;
+    _data['name'] = name;
+    _data['imagePath'] = imagePath;
+    _data['address'] = address;
+    _data['city'] = city;
+    _data['phoneNumber'] = phoneNumber;
+    _data['openingHours'] = openingHours;
+    _data['ticketPrice'] = ticketPrice;
+    _data['websiteUrl'] = websiteUrl;
+    _data['videoUrl'] = videoUrl;
+    _data['mapsUrl'] = mapsUrl;
+    _data['isFavorite'] = isFavorite;
+    return _data;
   }
 }

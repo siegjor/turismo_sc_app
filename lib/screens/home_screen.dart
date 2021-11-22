@@ -34,6 +34,22 @@ class HomeScreen extends StatelessWidget {
                   future: Provider.of<HomeProvider>(context, listen: false)
                       .getAttractions(),
                   builder: (context, AsyncSnapshot snapshot) {
+                    if (!snapshot.hasData) {
+                      return const Center(child: CircularProgressIndicator());
+                    }
+                    if (snapshot.hasError) {
+                      return const Center(
+                        child: Text(
+                          'Ocorreu um erro! Por favor tente novamente.',
+                          style: TextStyle(
+                            color: Colors.grey,
+                            fontSize: 18,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      );
+                    }
+
                     return ListView.builder(
                         shrinkWrap: true,
                         itemCount: snapshot.data.length,

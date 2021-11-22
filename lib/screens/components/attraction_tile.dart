@@ -37,10 +37,10 @@ class AttractionTile extends StatelessWidget {
               subtitle: Text(attraction.city),
               trailing: hasFavoriteIcon
                   ? IconButton(
-                      icon: attraction.isFavorite
+                      icon: attraction.isFavorite!
                           ? const Icon(Icons.favorite, color: Colors.red)
                           : const Icon(Icons.favorite_border),
-                      onPressed: attraction.isFavorite
+                      onPressed: attraction.isFavorite!
                           ? () => provider!.removeFavorite(attraction)
                           : () => provider!.addFavorite(attraction),
                     )
